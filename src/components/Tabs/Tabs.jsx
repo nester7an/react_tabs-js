@@ -1,8 +1,7 @@
 import cs from 'classnames';
 // eslint-disable-next-line import/no-cycle
-import { tabs } from '../../App';
 
-export const Tabs = ({ activeTabId, setActiveTabId }) => {
+export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
   return (
     <div data-cy="TabsComponent">
       <div className="tabs is-boxed">
@@ -16,7 +15,7 @@ export const Tabs = ({ activeTabId, setActiveTabId }) => {
               <a
                 href={`#${tab.id}`}
                 data-cy="TabLink"
-                onClick={() => setActiveTabId(tab.id)}
+                onClick={() => onTabSelected(tab.id)}
               >
                 {tab.title}
               </a>
